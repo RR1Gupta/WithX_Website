@@ -293,7 +293,6 @@ animation:centerMerge 6s linear infinite;
   display:block;
   margin-top:0;
 }
-}
 .floating-shape{
   position:absolute;
   border:1px solid rgba(255,255,255,.08);
@@ -329,9 +328,8 @@ section.show .reveal-line > *{transform:translateY(0);}
   box-shadow:0 8px 20px rgba(56,189,248,.25);
 }
 .btn-secondary:hover{transform:translateY(-2px) scale(1.02); 
-}
+                    }
 
-}
 
 .about-minimal{min-height:72vh;display:grid;place-items:center;text-align:center;overflow:hidden;}
 .about-shell{position:relative;z-index:2;max-width:860px;padding:48px 36px;border-radius:28px;background:linear-gradient(180deg, rgba(255,255,255,.72), rgba(255,255,255,.52));border:1px solid rgba(10,31,68,.08);backdrop-filter:blur(16px);box-shadow:0 24px 60px rgba(10,31,68,.08);transform:translateY(var(--about-shift,0px)) scale(var(--about-scale, 1));transition:transform .18s linear;}
@@ -572,27 +570,66 @@ height:50px;
 right:10px;
 bottom:12%;
 }
-
+}
 /* Service cards */
+/* ===== SERVICES MOBILE FIX ===== */
+@media (max-width:768px){
+
 .stagger-grid{
-flex-direction:column;
-align-items:center;
-gap:24px;
+display:grid;
+grid-template-columns:1fr 1fr;  /* 2 cards per row */
+gap:16px;
+justify-content:center;
 }
 
 .stagger-grid .card{
 width:100%;
-max-width:340px;
+max-width:100%;
 min-height:auto;
+padding:18px;
+}
+
+.stagger-grid .card img{
+height:140px;
+}
 }
 
 /* Products */
+/* ===== PRODUCTS MOBILE FIX ===== */
+@media (max-width:768px){
+
 .product-showcase{
-grid-template-columns:1fr;
+display:flex;
+flex-direction:column;
+gap:20px;
 }
 
+/* Featured big card */
+.feature-card{
+padding:20px;
+text-align:center;
+}
+
+.feature-card .card-image{
+height:200px !important;
+}
+
+/* Stack becomes grid */
 .product-stack{
-gap:20px;
+display:grid;
+grid-template-columns:1fr 1fr; /* 2 items per row */
+gap:16px;
+}
+
+/* Small cards */
+.product-stack .card{
+padding:16px;
+}
+
+.product-stack .card .card-image{
+height:120px;
+}
+
 }
 
 /* Carousel */
@@ -686,7 +723,7 @@ border-radius:18px;
     <div class="hero-bg-slide active" style="background-image:url('https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0');"></div>
     <div class="hero-bg-slide" style="background-image:url('https://images.unsplash.com/photo-1581091215367-59ab6b7f1c7b?auto=format&fit=crop&w=1400&q=70&fm=jpg');"></div>
     <div class="hero-bg-slide" style="background-image:url('https://images.unsplash.com/photo-1517048676732-d65bc937f952');"></div>
-    <div class="hero-bg-slide" style="background-image:url('hhttps://images.unsplash.com/photo-1581092918056-0c4c3acd3789');"></div>
+    <div class="hero-bg-slide" style="background-image:url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789');"></div>
     <div class="hero-bg-slide" style="background-image:url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d');"></div>
     <div class="hero-bg-slide" style="background-image:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1400&q=70&fm=jpg');"></div>
     <div class="hero-bg-slide" style="background-image:url('https://images.unsplash.com/photo-1567789884554-0b844b597180');"></div>
@@ -956,7 +993,7 @@ if(heroBgSlides.length){
     heroBgSlides[heroBgIndex].classList.remove('active');
     heroBgIndex = (heroBgIndex + 1) % heroBgSlides.length;
     heroBgSlides[heroBgIndex].classList.add('active');
-  }, 4000);
+  }, 5000);
 }
 
 const cards = document.querySelectorAll('.card');
