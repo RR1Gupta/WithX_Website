@@ -587,14 +587,97 @@ min-height:auto;
 }
 
 /* Products */
-.product-showcase{
-grid-template-columns:1fr;
+/* Products */
+/* ===== PRODUCT SECTION MOBILE FIX ===== */
+@media (max-width:768px){
+
+#products{
+padding:70px 0;
 }
 
+.product-showcase{
+display:flex;
+flex-direction:column;
+gap:24px;
+}
+
+/* Main featured product card */
+.feature-card{
+padding:22px;
+text-align:center;
+}
+
+.feature-card .card-image{
+height:220px !important;
+border-radius:18px;
+margin-bottom:18px;
+}
+
+.feature-card strong{
+font-size:1.45rem !important;
+line-height:1.35;
+display:block;
+margin-bottom:12px;
+}
+
+.feature-card span{
+font-size:1rem;
+line-height:1.7;
+display:block;
+}
+
+.feature-card .btn{
+margin-top:20px;
+width:100%;
+max-width:260px;
+}
+
+/* stacked product cards */
 .product-stack{
+display:flex;
+flex-direction:column;
 gap:20px;
 }
 
+.product-stack .card{
+padding:22px;
+text-align:center;
+min-height:auto;
+}
+
+.product-stack .card-image{
+height:200px;
+border-radius:16px;
+margin-bottom:16px;
+}
+
+.product-stack strong{
+display:block;
+font-size:1.2rem;
+margin-bottom:8px;
+line-height:1.4;
+}
+
+.product-stack span{
+display:block;
+font-size:.98rem;
+line-height:1.6;
+padding:0 8px;
+}
+
+/* nicer breathing room */
+#products .section-top{
+text-align:center;
+margin-bottom:34px;
+}
+
+#products .section-top p{
+font-size:1rem;
+line-height:1.7;
+padding:0 12px;
+}
+
+}
 /* Carousel */
 .carousel{
 padding-bottom:14px;
